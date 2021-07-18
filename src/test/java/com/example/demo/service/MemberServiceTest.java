@@ -1,10 +1,7 @@
 package com.example.demo.service;
 
 import com.example.demo.domain.Member;
-import com.example.demo.repository.MemberRepository;
 import com.example.demo.repository.MemoryMemberRepository;
-import org.assertj.core.api.Assertions;
-import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 
@@ -12,7 +9,7 @@ import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 class MemberServiceTest {
-    MemberService memberService = new MemberService();
+    MemberService memberService = new MemberService(memberRepository);
     MemoryMemberRepository memberRepository = new MemoryMemberRepository();
 
     @AfterEach
